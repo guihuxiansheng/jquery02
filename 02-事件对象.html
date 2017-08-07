@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p style="position: absolute;">小女孩的小木屋</p>
+</body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(window).mousemove(function (ev) {
+        $('p').css({
+            top: ev.clientY,
+            left: ev.clientX
+        })
+    })
+</script>
+</html>

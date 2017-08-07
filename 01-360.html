@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../01/node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        body,ul,li,p{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .box{
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        ul{
+            overflow: hidden;
+        }
+        ul li {
+            float: left;
+            width: calc(25% - 10px);
+            height: 125px;
+            position: relative;
+            overflow: hidden;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        ul li p{
+            position: absolute;
+            left:0;
+            bottom:-50px;
+            width: 100%;
+            padding: 5px;
+            text-align: left;
+            background-color: rgba(0,0,0,.5);
+            -webkit-transition: bottom 0.5s;
+            -moz-transition:bottom 0.5s;
+            -ms-transition:bottom 0.5s;
+            -o-transition:bottom 0.5s;
+            transition:bottom 0.5s;
+        }
+        ul li p .icon{
+            display: block;
+            float: left;
+            width:16px;
+            height:16px;
+            background: url("img01/bg.png");
+            background-position-y: -4px;
+            margin-top: 4px;
+        }
+        ul li:hover p{
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+        </ul>
+    </div>
+</body>
+<script>
+    var imgPath = ['img01/01.JPG','img01/02.JPG','img01/03.JPG','img01/04.JPG','img01/05.JPG','img01/06.JPG','img01/07.JPG','img01/08.JPG'];
+    var text = ['百度巴拉巴拉','淘宝巴拉巴拉','新浪巴拉巴拉','网易巴拉巴拉','搜狐巴拉巴拉','腾讯巴拉巴拉','优酷巴拉巴拉','京东巴拉巴拉'];
+    var oUl = $('.box ul');
+    $.each(imgPath,function (index,val) {
+        var str = ' <li>'+
+               ' <img src="'+ val +'" alt="">'+
+                '<p><i class="icon" style="'+ 'background-position-y: -'+ (index*25+4) +'px;' +'"></i>'+ text[index] +'</p>'+
+                '</li>';
+        oUl.append(str);
+    })
+</script>
+</html>
